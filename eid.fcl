@@ -1,0 +1,29 @@
+#include "eid_config.fcl"
+#include "services_dune.fcl"
+
+process_name: Eventid
+source:
+{
+module_type : RootInput
+maxEvents :-1
+}
+
+services:
+{
+ TFileService:{fileName:"analysiseid.root"}
+ @table::dunefd_1x2x6_simulation_services
+
+}
+
+physics:
+{
+    analyzers:
+    {
+        ana: @local::eventid
+
+    }
+    path0:  [ana]
+    end_paths: [path0]
+
+
+}
