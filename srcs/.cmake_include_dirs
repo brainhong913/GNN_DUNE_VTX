@@ -1,0 +1,7 @@
+# DO NOT DELETE 
+# larpandoracontent package block
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/larpandoracontent)
+include_directories($ENV{MRB_BUILDDIR}/larpandoracontent)
+# duneana package block
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/duneana)
+include_directories($ENV{MRB_BUILDDIR}/duneana)

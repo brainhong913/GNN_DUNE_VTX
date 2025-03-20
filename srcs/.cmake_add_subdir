@@ -1,0 +1,7 @@
+# DO NOT DELETE 
+# larpandoracontent
+mrb_add_subdirectory(larpandoracontent)
+mrb_process_checkpoints()
+# duneana
+mrb_add_subdirectory(duneana)
+mrb_process_checkpoints()
