@@ -1,0 +1,145 @@
+---
+path:
+  # - name:         GENIE
+  #   subdir:       genie
+  #   fcl:          ./fcl/atm-genie-AV.fcl
+  #   # local_source: /dune/app/users/pgranger/atmospherics/devGen.tar.gz
+  #   ofile:        atm_genie
+  #   job_config:
+  #     expected-lifetime: 2h
+  #     timeout: 2h
+
+  # - name:         Geant4
+  #   subdir:       g4
+  #   fcl:          standard_g4_dune10kt_1x2x6.fcl
+  #   ofile:        atm_g4
+  #   job_config:
+  #     expected-lifetime: 2h
+  #     timeout: 2h
+
+  # - name:         Detsim
+  #   subdir:       detsim
+  #   fcl:          standard_detsim_dune10kt_1x2x6.fcl
+  #   ofile:        atm_detsim
+  #   job_config:
+  #     expected-lifetime: 15h
+  #     timeout: 15h
+  #     memory: 8000
+
+  - name:         Reco
+    subdir:       reco_for_all
+    dataset:       dataset
+
+    fcl:          /exp/dune/app/users/ichong/atmo_gen/fcl/atm-training-extract.fcl
+    local_source: /exp/dune/app/users/ichong/larsoft_graph_V1_2025.tar.gz
+
+    ofile: atm_reco
+   
+    inputs:
+      - /exp/dune/app/users/ichong/atmo_gen/fcl/PandoraSettings_Master_Training_CSV.xml
+      - /exp/dune/app/users/ichong/atmo_gen/fcl/PandoraSettings_Neutrino_Training_CSV.xml
+    outputs:
+      - training1_CaloHitListU_graph.data
+      - training1_CaloHitListV_graph.data
+      - training1_CaloHitListW_graph.data
+
+
+
+
+  - name:         Subrunlist
+    subdir:       subrunlist
+    dataset:       dataset
+
+    fcl:          /exp/dune/app/users/ichong/jrjc_test/eid.fcl
+    # local_source: /exp/dune/app/users/ichong/larsoft_graph_new2/larsoft.tar.gz
+    local_source: /exp/dune/app/users/ichong/larsoft_graph_eidfix.tar.gz
+
+    # idir: /pnfs/dune/persistent/users/pgranger/atm_50k_hd_AV_2.5_random/detsim
+    # ifile: atm_detsim
+    # ofile: atm_reco
+   
+  #   inputs:
+  #     - /exp/dune/app/users/ichong/atmo_gen/fcl/PandoraSettings_Master_Training_CSV.xml
+  #     - /exp/dune/app/users/ichong/atmo_gen/fcl/PandoraSettings_Neutrino_Training_CSV.xml
+  #   outputs:
+  #     - analysiseid.root
+      
+
+  # - name:           AnaTree
+  #   subdir:         anatree
+  #   dataset:        dataset
+  #   fcl:            fcl/standard_anatree_dunehd10kt_v5_1x2x6.fcl
+  #   outputs:
+  #     - ana_tree_hd.root
+
+  #   job_config:
+  #     expected-lifetime: 2h
+  #     timeout: 2h
+  #   job_config:
+  #     expected-lifetime: 2h
+  #     timeout: 2h
+
+    # - name:         CAFMaker
+    #   subdir:       caf
+    #   fcl:          ./fcl/atm-caf.fcl
+    #   local_source: /dune/app/users/pgranger/CAFMaker_new.tar.gz
+    #   job_config:
+    #     expected-lifetime: 2h
+    #     timeout: 2h
+    #   outputs:
+    #     - caf.root
+    #     - flatcaf.root
+
+    # - name:         CAFMaker_new2
+    #   subdir:       caf_new2
+    #   fcl:          ./fcl/atm-caf.fcl
+    #   local_source: /dune/app/users/pgranger/CAFMaker_new.tar.gz
+    #   job_config:
+    #     expected-lifetime: 2h
+    #     timeout: 2h
+    #   outputs:
+    #     - caf.root
+    #     - flatcaf.root
+
+    # - name:         Training_extract
+    #   subdir:       training
+    #   fcl:          ./fcl/atm-training-extract.fcl
+    #   local_source: /dune/app/users/pgranger/pandora_dl.tar.gz
+    #   job_config:
+    #     expected-lifetime: 2h
+    #     timeout: 2h
+    #   inputs:
+    #     - ./fcl/PandoraSettings_Neutrino_Training.xml
+    #     - ./fcl/PandoraSettings_Master_Training.xml
+    #   outputs:
+    #     - training_CaloHitListU.csv
+    #     - training_CaloHitListV.csv
+    #     - training_CaloHitListW.csv
+
+    # - name:         Export_rings
+    #   subdir:       rings
+    #   fcl:          ./fcl/atm-export-rings.fcl
+    #   local_source: /dune/app/users/pgranger/pandora_dl.tar.gz
+    #   job_config:
+    #     expected-lifetime: 2h
+    #     timeout: 2h
+    #   inputs:
+    #     - ./fcl/PandoraSettings_Neutrino_Export.xml
+    #     - ./fcl/PandoraSettings_Master_Export.xml
+    #   outputs:
+    #     - rings.dat
+
+global:
+  nfiles: 100
+  nevents: 10
+  dune_version:  v10_04_06d00 
+  dune_qual: e26:prof
+  odir: /pnfs/dune/scratch/users/ichong/graph_offical_production_V1
+  debug_output: True
+  job_config:
+    singularity-image: /cvmfs/singularity.opensciencegrid.org/fermilab/fnal-wn-sl7:latest
+    group: dune
+    expected-lifetime: 6h
+    memory: 4000
+    timeout: 6h
+    OS: SL7
