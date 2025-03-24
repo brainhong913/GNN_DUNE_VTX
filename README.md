@@ -28,10 +28,12 @@ You will likely to also need   # - name:           AnaTree to generate anatree
 So if you follow below, you shall produced :
 1. .data file as the graph raw input
 2. eid root file to fix the eid, make it align with the anatree
-3. Anatree
+3. Anatree. You might want to hadd them to become a single root file ( you can call it merged.root)
 
 
 #Loading the input in python
+Incase you don't want to produce the data, here is the path of where you can find some data
+/exp/dune/app/users/ichong/3views_graph_data
 
 
 
