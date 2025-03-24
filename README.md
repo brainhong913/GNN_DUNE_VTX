@@ -39,12 +39,3 @@ For the python pages, please go to
 https://github.com/brainhong913/GNN_DUNE_VTX_Python
 
 
-
-
-
-
-1. Anatree for all of the files
-2. graph data, as .data
-3. eid fix file, which is a root file
-
-
