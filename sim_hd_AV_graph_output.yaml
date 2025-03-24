@@ -58,11 +58,11 @@ path:
     # ifile: atm_detsim
     # ofile: atm_reco
    
-  #   inputs:
-  #     - /exp/dune/app/users/ichong/atmo_gen/fcl/PandoraSettings_Master_Training_CSV.xml
-  #     - /exp/dune/app/users/ichong/atmo_gen/fcl/PandoraSettings_Neutrino_Training_CSV.xml
-  #   outputs:
-  #     - analysiseid.root
+    inputs:
+      - /exp/dune/app/users/ichong/atmo_gen/fcl/PandoraSettings_Master_Training_CSV.xml
+      - /exp/dune/app/users/ichong/atmo_gen/fcl/PandoraSettings_Neutrino_Training_CSV.xml
+    outputs:
+      - analysiseid.root
       
 
   # - name:           AnaTree
