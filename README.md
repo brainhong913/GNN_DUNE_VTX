@@ -18,7 +18,7 @@ To generate root file for truth_eid
 
 # Submit jobs
 Please read https://gitlab.in2p3.fr/pgranger/atmo_gen
-This is a production using the offical production.
+This is a  using the offical production.
 You will likely to need the larsoft_graph_V1_2025.tar.gz and the yaml
 
 First, use the   - name:         Reco to generate graph file for U,V,W
