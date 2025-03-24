@@ -35,7 +35,8 @@ So if you follow below, you shall produced :
 Incase you don't want to produce the data, here is the path of where you can find some data
 /exp/dune/app/users/ichong/3views_graph_data
 
-
+For the python pages, please go to
+https://github.com/brainhong913/GNN_DUNE_VTX_Python
 
 
 
