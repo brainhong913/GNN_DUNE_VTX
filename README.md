@@ -26,6 +26,20 @@ You will likely to also need   # - name:           AnaTree to generate anatree
 
 
 So if you follow below, you shall produced :
+1. .data file as the graph raw input
+2. eid root file to fix the eid, make it align with the anatree
+3. Anatree
+
+
+#Loading the input in python
+
+
+
+
+
+
+
+
 1. Anatree for all of the files
 2. graph data, as .data
 3. eid fix file, which is a root file
